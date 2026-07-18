@@ -14,6 +14,7 @@ try:
         EventType,
         ForumEvent,
         GroupAtMessageCreateEvent,
+        GroupMessageCreateEvent,
         GroupRobotEvent,
         GuildEvent,
         GuildMemberEvent,
@@ -31,6 +32,7 @@ try:
                 # C2C_GROUP_AT_MESSAGES
                 EventType.C2C_MESSAGE_CREATE,
                 EventType.GROUP_AT_MESSAGE_CREATE,
+                EventType.GROUP_MESSAGE_CREATE,
                 # FRIEND_ROBOT_EVENT
                 EventType.FRIEND_ADD,
                 EventType.FRIEND_DEL,
@@ -123,6 +125,7 @@ try:
 
             elif self.event.__type__ in [
                 EventType.GROUP_AT_MESSAGE_CREATE,
+                EventType.GROUP_MESSAGE_CREATE,
                 # GROUP_ROBOT_EVENT
                 EventType.GROUP_ADD_ROBOT,
                 EventType.GROUP_DEL_ROBOT,
@@ -192,6 +195,7 @@ try:
                 self.event,
                 (
                     GroupAtMessageCreateEvent,
+                    GroupMessageCreateEvent,
                     GroupRobotEvent,
                 ),
             ):
